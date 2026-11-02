@@ -111,6 +111,7 @@
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
   .grid figure { margin: 0; }
   .grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+  .grid figcaption { font-size: 0.85em; line-height: 1.35; margin-top: 0.3em; }
   .slot {
     aspect-ratio: 4 / 3; max-width: 100%; border: 1px dashed var(--rule); opacity: 0.45;
     display: grid; place-items: center; font-size: 0.85em;
@@ -204,24 +205,32 @@
 
 <script>
   /* Add photos here. Each place gets a pin on the map and an album below it.
-     photos: [{ src: "path-or-data-uri", pos: "optional crop position, e.g. 50% 0%" }] */
+     photos: [{ src: "path-or-data-uri", date: "YYYY-MM-DD", pos: "optional crop position, e.g. 50% 0%" }]
+     Order doesn't matter here: places and photos are sorted newest first below. */
   const places = [
-    { id: "el-salvador", name: "El Salvador", year: "", lat: 13.70, lon: -89.19, photos: [{ src: "images/el-salvador-san-salvador-evening-street.jpg" }] },
-    { id: "fort-lauderdale", name: "Fort Lauderdale", year: "", lat: 26.12, lon: -80.14, photos: [{ src: "images/fort-lauderdale-coastal-sunset.jpg" }, { src: "images/fort-lauderdale-pompano-beach-waterfront.jpg" }] },
-    { id: "ireland", name: "Ireland", year: "", lat: 53.35, lon: -6.26, photos: [{ src: "images/ireland-temple-bar-evening-storefront.jpg" }] },
-    { id: "kyoto", name: "Kyoto", year: "", lat: 35.01, lon: 135.77, photos: [{ src: "images/kyoto-ginkakujimaecho-street.jpg" }] },
-    { id: "mexico-city", name: "Mexico City", year: "", lat: 19.43, lon: -99.13, photos: [{ src: "images/mexico-city-santa-julia-interior.jpg" }] },
-    { id: "montreal", name: "Montreal", year: "", lat: 45.50, lon: -73.57, photos: [{ src: "images/montreal-night-street.jpg" }] },
-    { id: "natal", name: "Natal", year: "", lat: -5.79, lon: -35.21, photos: [{ src: "images/natal-tirol-city-view.jpg" }] },
-    { id: "new-york-city", name: "New York City", year: "", lat: 40.71, lon: -74.01, photos: [{ src: "images/new-york-city-manhattan-street-cyclist.jpg" }] },
-    { id: "osaka", name: "Osaka", year: "", lat: 34.69, lon: 135.50, photos: [{ src: "images/osaka-umeda-crossing.jpg" }] },
-    { id: "paris", name: "Paris", year: "", lat: 48.86, lon: 2.35, photos: [{ src: "images/paris.jpg" }] },
-    { id: "portland", name: "Portland", year: "", lat: 45.52, lon: -122.68, photos: [{ src: "images/portland-pearl-district-street.jpg" }] },
-    { id: "san-francisco", name: "San Francisco", year: "", lat: 37.77, lon: -122.42, photos: [{ src: "images/san-francisco-union-square-street.jpg" }] },
-    { id: "stockholm", name: "Stockholm", year: "", lat: 59.33, lon: 18.07, photos: [{ src: "images/stockholm-hedvig-eleonora-street.jpg" }] },
-    { id: "tokyo", name: "Tokyo", year: "", lat: 35.68, lon: 139.69, photos: [{ src: "images/tokyo-shibuya-crossing-at-night.jpg" }] },
-    { id: "waterloo", name: "Waterloo", year: "", lat: 43.46, lon: -80.52, photos: [{ src: "images/waterloo-1.jpg" }, { src: "images/waterloo-2.jpg" }, { src: "images/waterloo-3.jpg", pos: "50% 0%" }] }
+    { id: "el-salvador", name: "El Salvador", year: "", lat: 13.70, lon: -89.19, photos: [{ src: "images/el-salvador-san-salvador-evening-street.jpg", date: "2025-12-28" }] },
+    { id: "fort-lauderdale", name: "Fort Lauderdale", year: "", lat: 26.12, lon: -80.14, photos: [{ src: "images/fort-lauderdale-coastal-sunset.jpg", date: "2019-12-31" }, { src: "images/fort-lauderdale-pompano-beach-waterfront.jpg", date: "2020-01-05" }] },
+    { id: "ireland", name: "Ireland", year: "", lat: 53.35, lon: -6.26, photos: [{ src: "images/ireland-temple-bar-evening-storefront.jpg", date: "2017-03-14" }] },
+    { id: "kyoto", name: "Kyoto", year: "", lat: 35.01, lon: 135.77, photos: [{ src: "images/kyoto-ginkakujimaecho-street.jpg", date: "2025-09-02" }] },
+    { id: "mexico-city", name: "Mexico City", year: "", lat: 19.43, lon: -99.13, photos: [{ src: "images/mexico-city-santa-julia-interior.jpg", date: "2026-09-27" }] },
+    { id: "montreal", name: "Montreal", year: "", lat: 45.50, lon: -73.57, photos: [{ src: "images/montreal-night-street.jpg", date: "2022-12-07" }] },
+    { id: "natal", name: "Natal", year: "", lat: -5.79, lon: -35.21, photos: [{ src: "images/natal-tirol-city-view.jpg", date: "2023-08-29" }] },
+    { id: "new-york-city", name: "New York City", year: "", lat: 40.71, lon: -74.01, photos: [{ src: "images/new-york-city-manhattan-street-cyclist.jpg", date: "2024-05-04" }] },
+    { id: "osaka", name: "Osaka", year: "", lat: 34.69, lon: 135.50, photos: [{ src: "images/osaka-umeda-crossing.jpg", date: "2025-09-04" }] },
+    { id: "paris", name: "Paris", year: "", lat: 48.86, lon: 2.35, photos: [{ src: "images/paris.jpg", date: "2022-08-30" }] },
+    { id: "portland", name: "Portland", year: "", lat: 45.52, lon: -122.68, photos: [{ src: "images/portland-pearl-district-street.jpg", date: "2026-04-10" }] },
+    { id: "san-francisco", name: "San Francisco", year: "", lat: 37.77, lon: -122.42, photos: [{ src: "images/san-francisco-union-square-street.jpg", date: "2025-10-26" }] },
+    { id: "stockholm", name: "Stockholm", year: "", lat: 59.33, lon: 18.07, photos: [{ src: "images/stockholm-hedvig-eleonora-street.jpg", date: "2022-09-02" }] },
+    { id: "tokyo", name: "Tokyo", year: "", lat: 35.68, lon: 139.69, photos: [{ src: "images/tokyo-shibuya-crossing-at-night.jpg", date: "2025-08-30" }] },
+    { id: "waterloo", name: "Waterloo", year: "", lat: 43.46, lon: -80.52, photos: [{ src: "images/waterloo-1.jpg", date: "2021-11-25" }, { src: "images/waterloo-2.jpg", date: "2025-05-22" }, { src: "images/waterloo-3.jpg", date: "2025-06-11", pos: "50% 0%" }] }
   ];
+
+  const newestFirst = (a = "", b = "") => b.localeCompare(a);
+  for (const p of places) p.photos.sort((x, y) => newestFirst(x.date, y.date));
+  places.sort((x, y) => newestFirst(x.photos[0]?.date, y.photos[0]?.date));
+
+  /* Noon, so the date can't shift a day in any time zone. */
+  const formatDate = d => new Date(d + "T12:00").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 
   const K = 1000 / 360, TOP = 84;
   const project = (lat, lon) => [(lon + 180) * K, (TOP - lat) * K];
@@ -292,7 +301,13 @@
           const img = document.createElement("img");
           img.src = ph.src; img.alt = p.name; img.loading = "lazy";
           if (ph.pos) img.style.objectPosition = ph.pos;
-          f.append(img); grid.append(f);
+          f.append(img);
+          if (ph.date) {
+            const c = document.createElement("figcaption");
+            c.textContent = formatDate(ph.date);
+            f.append(c);
+          }
+          grid.append(f);
         }
       } else {
         for (let i = 0; i < 3; i++) {
