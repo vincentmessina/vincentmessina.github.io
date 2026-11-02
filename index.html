@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vincent Messina</title>
-<meta name="description" content="Vincent Messina builds AI products in Montreal. Founder and builder of Claio, Viova and Marea. Building Alido.">
+<meta name="description" content="Vincent Messina builds AI products in Montreal. Built Claio, Viova and Marea. Building Alido.">
 <meta property="og:title" content="Vincent Messina">
-<meta property="og:description" content="Founder in Montreal. Building Alido. Founded and built Claio, Viova and Marea.">
+<meta property="og:description" content="Founder in Montreal. Building Alido. Built Claio, Viova and Marea.">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://vincemessina.com/">
 <meta property="og:url" content="https://vincemessina.com/">
@@ -101,11 +101,17 @@
   .cluster text { font: 600 13px var(--serif); fill: #1b1b1b; text-anchor: middle; dominant-baseline: central; }
   .cluster:focus-visible circle.ring { stroke: var(--link); stroke-width: 2; }
 
-  .album { margin: 0 0 2.2em; scroll-margin-top: 16px; }
-  .album h3 { font-weight: 700; font-size: 1.3em; text-align: center; margin: 0 0 0.7em; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+  .portrait { float: right; width: 130px; height: auto; margin: 0.35em 0 1em 1.5em; }
+  @media (max-width: 420px) { .portrait { width: 100px; margin-left: 1em; } }
+
+  #albums { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2em 16px; align-items: start; }
+  .album { scroll-margin-top: 16px; }
+  .album:has(figure:nth-child(3)) { grid-column: 1 / -1; }
+  .album h3 { font-weight: 700; font-size: 1.15em; margin: 0 0 0.4em; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
   .grid figure { margin: 0; }
   .grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+  .grid figcaption { font-size: 0.85em; line-height: 1.35; margin-top: 0.3em; }
   .slot {
     aspect-ratio: 4 / 3; max-width: 100%; border: 1px dashed var(--rule); opacity: 0.45;
     display: grid; place-items: center; font-size: 0.85em;
@@ -120,6 +126,7 @@
 
   <!-- HOME -->
   <main id="view-home">
+    <img class="portrait" src="images/vincent-messina.jpg" alt="Vincent Messina" width="360" height="480">
     <p>I grew up in Montreal. I started my first business at 12, mowing lawns in my area. I grew it so much, for a 12-year-old, that when school started I had to hire some of my friends to help out. Over time, I sold the contracts to other landscaping companies.</p>
 
     <p>I love robotics and filmmaking. I was 8 years old when I wrote my first computer program, in VPL, for a Lego Mindstorms robot. It took me 11 years in robotics to win a competition. By then I was captain and it was the first in the team's 20-year history. I've been an actor since 2007, most recently in <a href="https://www.netflix.com/tudum/articles/unabomber-release-date-cast-news"><em>Unabomber</em></a> on Netflix.</p>
@@ -133,24 +140,16 @@
     <hr>
     <h2>Building</h2>
     <ul>
-      <li><a href="https://goalido.com">Alido</a>, an agentic franchise operator</li>
+      <li><a href="https://goalido.com">Alido</a>, the agentic franchise operator</li>
     </ul>
 
     <hr>
-    <h2>Founded &amp; Built</h2>
+    <h2>Previous Work</h2>
     <ul>
-      <li><a href="https://www.claio.ai">Claio</a>, AI for dental, started in medical</li>
-      <li><a href="https://viova.ai">Viova</a>, AI phone agent for car dealers</li>
-      <li><a href="https://usemarea.com">Marea</a>, AI for dental, started at TDO</li>
-      <li><a href="https://www.tigertms.com">TigerTMS</a>, first MVP, built in a weekend</li>
-    </ul>
-
-    <hr>
-    <h2>Research</h2>
-    <ul>
-      <li><a href="https://github.com/vincentmessina/TSAnalysis">Taylor Swift and NFL ratings</a>, in R</li>
-      <li><a href="https://github.com/vincentmessina/Enron-Analysis">Enron's email network</a>, in R</li>
-      <li><a href="https://github.com/vincentmessina/Connect-X">Connect-X</a>, a Connect Infinity solver in C, for any size of board</li>
+      <li><a href="https://www.claio.ai">Claio</a>, automating the dental practice</li>
+      <li><a href="https://viova.ai">Viova</a>, AI receptionist for car dealers</li>
+      <li><a href="https://usemarea.com">Marea</a>, an agentic endodontic assistant</li>
+      <li><a href="https://www.tigertms.com">TigerTMS</a>, the agentic hotel concierge</li>
     </ul>
 
     <hr>
@@ -161,7 +160,17 @@
       <li><a href="https://www.imdb.com/title/tt4042818/"><em>The Death and Life of John F. Donovan</em></a>, Xavier Dolan</li>
       <li><a href="https://www.imdb.com/title/tt3340712/"><em>19-2</em></a>, television</li>
       <li><a href="https://www.imdb.com/title/tt2175563/"><em>Assassin's Creed III</em></a>, Ubisoft, voice</li>
-      <li><a href="https://www.agencelasuite.com">La Suite</a>, my agency</li>
+      <li><a href="https://en.wikipedia.org/wiki/Upside_Down_(2012_film)"><em>Upside Down</em></a>, Juan Solanas</li>
+      <li><a href="https://en.wikipedia.org/wiki/The_Factory_(2012_film)"><em>The Factory</em></a>, as John Cusack's son</li>
+      <li><a href="https://agencelasuite.com/en/artists/vincent_messina/687">La Suite</a>, my agency and full credits</li>
+    </ul>
+
+    <hr>
+    <h2>Research</h2>
+    <ul>
+      <li><a href="https://github.com/vincentmessina/TSAnalysis">Taylor Swift and NFL ratings</a>, in R</li>
+      <li><a href="https://github.com/vincentmessina/Enron-Analysis">Enron's email network</a>, in R</li>
+      <li><a href="https://github.com/vincentmessina/Connect-X">Connect-X</a>, a Connect Infinity solver in C, for any size of board</li>
     </ul>
 
     <hr>
@@ -196,10 +205,23 @@
 
 <script>
   /* Add photos here. Each place gets a pin on the map and an album below it.
-     photos: [{ src: "path-or-data-uri", caption: "optional" }] */
+     photos: [{ src: "path-or-data-uri", caption: "optional", pos: "optional crop position, e.g. 50% 0%" }] */
   const places = [
-    { id: "montreal", name: "Montreal", year: "2026", lat: 45.50, lon: -73.57, photos: [] },
-    { id: "waterloo", name: "Waterloo", year: "", lat: 43.46, lon: -80.52, photos: [] }
+    { id: "el-salvador", name: "El Salvador", year: "", lat: 13.70, lon: -89.19, photos: [{ src: "images/el-salvador-san-salvador-evening-street.jpg", caption: "San Salvador evening street" }] },
+    { id: "fort-lauderdale", name: "Fort Lauderdale", year: "", lat: 26.12, lon: -80.14, photos: [{ src: "images/fort-lauderdale-coastal-sunset.jpg", caption: "Coastal sunset" }, { src: "images/fort-lauderdale-pompano-beach-waterfront.jpg", caption: "Pompano Beach waterfront" }] },
+    { id: "ireland", name: "Ireland", year: "", lat: 53.35, lon: -6.26, photos: [{ src: "images/ireland-temple-bar-evening-storefront.jpg", caption: "Temple Bar evening storefront" }] },
+    { id: "kyoto", name: "Kyoto", year: "", lat: 35.01, lon: 135.77, photos: [{ src: "images/kyoto-ginkakujimaecho-street.jpg", caption: "Ginkakujimaecho street" }] },
+    { id: "mexico-city", name: "Mexico City", year: "", lat: 19.43, lon: -99.13, photos: [{ src: "images/mexico-city-santa-julia-interior.jpg", caption: "Santa Julia interior" }] },
+    { id: "montreal", name: "Montreal", year: "", lat: 45.50, lon: -73.57, photos: [{ src: "images/montreal-night-street.jpg", caption: "Night street" }] },
+    { id: "natal", name: "Natal", year: "", lat: -5.79, lon: -35.21, photos: [{ src: "images/natal-tirol-city-view.jpg", caption: "Tirol city view" }] },
+    { id: "new-york-city", name: "New York City", year: "", lat: 40.71, lon: -74.01, photos: [{ src: "images/new-york-city-manhattan-street-cyclist.jpg", caption: "Manhattan street cyclist" }] },
+    { id: "osaka", name: "Osaka", year: "", lat: 34.69, lon: 135.50, photos: [{ src: "images/osaka-umeda-crossing.jpg", caption: "Umeda crossing" }] },
+    { id: "paris", name: "Paris", year: "", lat: 48.86, lon: 2.35, photos: [{ src: "images/paris.jpg", caption: "" }] },
+    { id: "portland", name: "Portland", year: "", lat: 45.52, lon: -122.68, photos: [{ src: "images/portland-pearl-district-street.jpg", caption: "Pearl District street" }] },
+    { id: "san-francisco", name: "San Francisco", year: "", lat: 37.77, lon: -122.42, photos: [{ src: "images/san-francisco-union-square-street.jpg", caption: "Union Square street" }] },
+    { id: "stockholm", name: "Stockholm", year: "", lat: 59.33, lon: 18.07, photos: [{ src: "images/stockholm-hedvig-eleonora-street.jpg", caption: "Hedvig Eleonora street" }] },
+    { id: "tokyo", name: "Tokyo", year: "", lat: 35.68, lon: 139.69, photos: [{ src: "images/tokyo-shibuya-crossing-at-night.jpg", caption: "Shibuya crossing at night" }] },
+    { id: "waterloo", name: "Waterloo", year: "", lat: 43.46, lon: -80.52, photos: [{ src: "images/waterloo-1.jpg", caption: "" }, { src: "images/waterloo-2.jpg", caption: "" }, { src: "images/waterloo-3.jpg", caption: "", pos: "50% 0%" }] }
   ];
 
   const K = 1000 / 360, TOP = 84;
@@ -270,7 +292,14 @@
           const f = document.createElement("figure");
           const img = document.createElement("img");
           img.src = ph.src; img.alt = ph.caption || p.name; img.loading = "lazy";
-          f.append(img); grid.append(f);
+          if (ph.pos) img.style.objectPosition = ph.pos;
+          f.append(img);
+          if (ph.caption) {
+            const c = document.createElement("figcaption");
+            c.textContent = ph.caption;
+            f.append(c);
+          }
+          grid.append(f);
         }
       } else {
         for (let i = 0; i < 3; i++) {
